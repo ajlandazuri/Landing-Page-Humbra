@@ -269,58 +269,86 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================================================
-     5. FAQ Premium Modal & Accordion Logic
+     5. Footer Support Modals & FAQs
      ========================================================================== */
+  const faqBtn = document.getElementById('footer-faq-btn');
+  const shippingBtn = document.getElementById('footer-shipping-btn');
+  const returnsBtn = document.getElementById('footer-returns-btn');
+  const sustainabilityBtn = document.getElementById('footer-sustainability-btn');
+
   const faqModal = document.getElementById('faq-modal');
-  const faqCerrar = document.getElementById('faq-close');
-  const faqTrigger = document.getElementById('faq-trigger');
-  const faqOverlay = document.getElementById('faq-overlay');
-  const faqQuestions = document.querySelectorAll('.faq-question');
+  const shippingModal = document.getElementById('shipping-modal');
+  const returnsModal = document.getElementById('returns-modal');
+  const sustainabilityModal = document.getElementById('sustainability-modal');
 
-  const openFaq = (e) => {
-    if (e) e.preventDefault();
-    faqModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+  const supportModals = [faqModal, shippingModal, returnsModal, sustainabilityModal];
+
+  // Open modal helper
+  const openSupportModal = (modal) => {
+    if (!modal) return;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // block background scroll
   };
 
-  const closeFaq = () => {
-    faqModal.classList.remove('active');
-    document.body.style.overflow = '';
+  // Close all support modals helper
+  const closeAllSupportModals = () => {
+    supportModals.forEach(modal => {
+      if (modal) modal.classList.remove('active');
+    });
+    // Restore background scroll only if no other modal window is active
+    const isQuizActive = quizModal && quizModal.classList.contains('active');
+    const isMobileMenu = mobileDrawer && mobileDrawer.classList.contains('active');
+    if (!isQuizActive && !isMobileMenu) {
+      document.body.style.overflow = '';
+    }
   };
 
-  if (faqTrigger) {
-    faqTrigger.addEventListener('click', openFaq);
-  }
-  if (faqCerrar) {
-    faqCerrar.addEventListener('click', closeFaq);
-  }
-  if (faqOverlay) {
-    faqOverlay.addEventListener('click', closeFaq);
-  }
-  
-  // Accordion Logic
-  faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-      const isExpanded = question.getAttribute('aria-expanded') === 'true';
-      const answer = question.nextElementSibling;
-      
-      // Close all other open items for exclusive accordion mode
-      faqQuestions.forEach(otherQuestion => {
-        if (otherQuestion !== question && otherQuestion.getAttribute('aria-expanded') === 'true') {
-          otherQuestion.setAttribute('aria-expanded', 'false');
-          const otherAnswer = otherQuestion.nextElementSibling;
-          otherAnswer.style.maxHeight = null;
+  // Event Listeners for opening
+  if (faqBtn) faqBtn.addEventListener('click', (e) => { e.preventDefault(); openSupportModal(faqModal); });
+  if (shippingBtn) shippingBtn.addEventListener('click', (e) => { e.preventDefault(); openSupportModal(shippingModal); });
+  if (returnsBtn) returnsBtn.addEventListener('click', (e) => { e.preventDefault(); openSupportModal(returnsModal); });
+  if (sustainabilityBtn) sustainabilityBtn.addEventListener('click', (e) => { e.preventDefault(); openSupportModal(sustainabilityModal); });
+
+  // Close on button click
+  document.querySelectorAll('.support-modal-close').forEach(btn => {
+    btn.addEventListener('click', closeAllSupportModals);
+  });
+
+  // Close on clicking outside container
+  supportModals.forEach(modal => {
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeAllSupportModals();
         }
       });
-      
-      if (!isExpanded) {
-        question.setAttribute('aria-expanded', 'true');
-        answer.style.maxHeight = answer.scrollHeight + "px";
-      } else {
-        question.setAttribute('aria-expanded', 'false');
-        answer.style.maxHeight = null;
-      }
-    });
+    }
+  });
+
+  // Close on ESC keypress
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeAllSupportModals();
+    }
+  });
+
+  // Accordion functional logic for FAQ
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const questionBtn = item.querySelector('.faq-question');
+    if (questionBtn) {
+      questionBtn.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Close all first (only one open at a time)
+        faqItems.forEach(i => i.classList.remove('active'));
+        
+        // If it wasn't active, open it
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    }
   });
 
 });
