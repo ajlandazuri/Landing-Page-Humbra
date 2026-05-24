@@ -1871,7 +1871,7 @@ ul {
 /* ── Premium Grid ── */
 .closer-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -1888,6 +1888,44 @@ ul {
     gap: 1.5rem;
   }
 }
+
+/* ── WhatsApp Soporte Card ── */
+.closer-card--whatsapp {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.closer-card--whatsapp:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(3, 57, 102, 0.14),
+              0 0 0 1px rgba(83, 130, 148, 0.2);
+}
+
+.closer-card--whatsapp:hover .closer-icon-glow {
+  opacity: 0.6;
+  transform: scale(1.3);
+}
+
+.closer-card--whatsapp:hover svg {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+.closer-card--whatsapp svg {
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.closer-card--whatsapp:hover .link-arrow svg {
+  transform: translateX(4px);
+  transition: transform 0.3s ease;
+}
+
+.closer-card--whatsapp:hover .link-text {
+  color: var(--azul-grisaceo);
+}
+
 
 /* ── Premium Glassmorphic Cards ── */
 .premium-glass-card {
