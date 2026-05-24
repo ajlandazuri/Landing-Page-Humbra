@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HUMBRA Productos para la Piel | Belleza Limpia y Cuidado de la Piel Premium</title>
+  <meta name="description" content="Descubre HUMBRA Productos para la Piel. Fórmulas de alta gama probadas por dermatólogos, inspiradas en la naturaleza y respaldadas por la ciencia para una piel sana y radiante.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Premium Header -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="logo-wrapper" id="brand-logo">
+        <svg class="logo-icon" viewBox="0 0 24 24">
+          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-3.3 0-6-2.7-6-6 0-2.4 1.4-4.5 3.5-5.4.3.4.7.7 1.2.9.3.1.6.2.9.2.5 0 1-.2 1.4-.5.4.3.9.5 1.4.5.3 0 .6-.1.9-.2.5-.2.9-.5 1.2-.9 2.1.9 3.5 3 3.5 5.4 0 3.3-2.7 6-6 6z"/>
+          <path d="M12 8c-.6 0-1 .4-1 1s.4 1 1 1 1-.4 1-1-.4-1-1-1z"/>
+        </svg>
+        <span class="logo-text">Humbra</span>
+      </a>
+
+      <!-- Desktop Navigation Menúu -->
+      <nav class="main-nav" id="main-menu">
+        <a href="#home" class="nav-link" id="nav-home">Inicio</a>
+        <a href="#shop" class="nav-link">Tienda</a>
+        <a href="#skin-type" class="nav-link">Tipos de Piel</a>
+        <a href="#about" class="nav-link">Nosotros</a>
+        <a href="#routine" class="nav-link">Guía de Rutina</a>
+        <a href="#closer" class="nav-link">Blog</a>
+      </nav>
+
+      <!-- Header Action Utilities -->
+      <div class="header-utilities">
+        
+        <!-- Search Button -->
+        <button class="utility-btn" id="search-btn" aria-label="Buscar en el sitio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- User Profile Button -->
+        <button class="utility-btn" id="profile-btn" aria-label="Mi Cuenta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+
+        <!-- Botón de Pedidos por WhatsApp -->
+        <a href="https://wa.me/593995146583?text=Hola%20HUMBRA,%20me%20gustar%C3%ADa%20hacer%20una%20consulta%20o%20pedido." target="_blank" class="utility-btn" aria-label="Hacer Pedido por WhatsApp" style="color: inherit; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+        </a>
+
+        <!-- Hamburger Icon for Mobile Drawer -->
+        <button class="hamburger" id="hamburger-menu" aria-label="Open Navigation Menúu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay & Menúu -->
+  <div class="mobile-nav-overlay" id="mobile-overlay"></div>
+  <div class="mobile-nav-drawer" id="mobile-drawer">
+    <button class="mobile-nav-close" id="mobile-close" aria-label="Close Navigation Menúu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <div class="mobile-nav-list">
+      <a href="#home" class="mobile-nav-link">Inicio</a>
+      <a href="#shop" class="mobile-nav-link">Tienda</a>
+      <a href="#skin-type" class="mobile-nav-link">Tipos de Piel</a>
+      <a href="#about" class="mobile-nav-link">Nosotros</a>
+      <a href="#routine" class="mobile-nav-link">Guía de Rutina</a>
+      <a href="#closer" class="mobile-nav-link">Blog</a>
+    </div>
+  </div>
+
+  <!-- HOME Splash Section —— Full-screen brand entrance -->
+  <section class="home-splash" id="home" aria-label="HUMBRA Skincare - Inicio">
+
+    <!-- Animated watercolor texture layers -->
+    <div class="home-bg-layer home-bg-layer--1"></div>
+    <div class="home-bg-layer home-bg-layer--2"></div>
+    <div class="home-bg-layer home-bg-layer--3"></div>
+
+    <!-- Soft radial glow behind logo -->
+    <div class="home-logo-glow"></div>
+
+    <!-- Central brand identity -->
+    <div class="home-identity">
+
+      <!-- Floral / geometric monogram icon -->
+      <div class="home-monogram">
+        <svg class="home-monogram-svg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Outer petal top -->
+          <path d="M60 12 C48 12 38 26 38 42 C38 54 46 62 60 66 C74 62 82 54 82 42 C82 26 72 12 60 12Z" stroke="white" stroke-width="1.5" fill="none"/>
+          <!-- Outer petal bottom -->
+          <path d="M60 108 C72 108 82 94 82 78 C82 66 74 58 60 54 C46 58 38 66 38 78 C38 94 48 108 60 108Z" stroke="white" stroke-width="1.5" fill="none"/>
+          <!-- Outer petal left -->
+          <path d="M12 60 C12 72 26 82 42 82 C54 82 62 74 66 60 C62 46 54 38 42 38 C26 38 12 48 12 60Z" stroke="white" stroke-width="1.5" fill="none"/>
+          <!-- Outer petal right -->
+          <path d="M108 60 C108 48 94 38 78 38 C66 38 58 46 54 60 C58 74 66 82 78 82 C94 82 108 72 108 60Z" stroke="white" stroke-width="1.5" fill="none"/>
+          <!-- Inner cross H detail -->
+          <line x1="47" y1="60" x2="73" y2="60" stroke="white" stroke-width="1.3"/>
+          <line x1="47" y1="50" x2="47" y2="70" stroke="white" stroke-width="1.3"/>
+          <line x1="73" y1="50" x2="73" y2="70" stroke="white" stroke-width="1.3"/>
+          <!-- Corner diamond accents -->
+          <polygon points="60,6 63,12 60,18 57,12" fill="white" opacity="0.85"/>
+          <polygon points="60,114 63,108 60,102 57,108" fill="white" opacity="0.85"/>
+          <polygon points="6,60 12,57 18,60 12,63" fill="white" opacity="0.85"/>
+          <polygon points="114,60 108,57 102,60 108,63" fill="white" opacity="0.85"/>
+        </svg>
+      </div>
+
+      <!-- Brand name -->
+      <h1 class="home-brand-name">HUMBRA</h1>
+      <p class="home-brand-tagline">Productos para el Cuidado de la Piel</p>
+    </div>
+
+    <!-- Scroll indicator -->
+    <a href="#shop" class="home-scroll-indicator" aria-label="Desplazarse para explorar">
+      <span class="home-scroll-line"></span>
+      <span class="home-scroll-label">Explorar</span>
+    </a>
+
+  </section>
+
+  <main>
+    
+    <!-- Hero Section -->
+    <section class="hero-section" id="shop">
+      <div class="hero-glow-1"></div>
+      <div class="container hero-grid">
+        
+        <!-- Hero Descriptions -->
+        <div class="hero-content reveal">
+          <span class="hero-tag">Nuevo Lanzamiento</span>
+          <h1 class="hero-title">
+            Crema Fundente Reparadora 
+            <span>de Barrera</span>
+          </h1>
+          <p class="hero-desc">
+            Hidratación profunda. Soporte de barrera. Formulado para calmar, proteger y construir una piel resistente y radiante.
+          </p>
+          <button class="btn btn-primary add-to-cart-action" data-product="Crema Fundente Reparadora de Barrera" data-price="48">
+            <span>Descubrir Ahora</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Find Your Skin Type Section -->
+    <section class="skin-type-section section-spacer text-center" id="skin-type">
+      <div class="container">
+        
+        <span class="eyebrow">Buscador de Piel</span>
+        <h2 class="section-title reveal">Encuentra tu Tipo de Piel</h2>
+        <p class="section-subtitle reveal">
+          Responde unas preguntas rápidas y te recomendaremos la rutina personalizada perfecta para tu piel.
+        </p>
+
+        <!-- Grid of 3 texture swatches -->
+        <div class="skin-type-grid reveal-stagger">
+          
+          <!-- Dry Skin -->
+          <div class="skin-card">
+            <img src="assets/texture_dry.png" alt="Textura cremosa rica para piel seca" class="skin-card-bg">
+            <div class="skin-card-content" data-tag="Piel Seca">
+              <div class="skin-card-top">
+                <h3>Piel Seca</h3>
+                <p>Se siente tirante, descamada, carece de humedad o se ve constantemente opaca bajo la luz ambiental.</p>
+              </div>
+              <a href="#" class="skin-card-arrow quiz-trigger" aria-label="Encontrar soluciones para piel seca">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Normal Skin -->
+          <div class="skin-card">
+            <img src="assets/texture_normal.png" alt="Textura equilibrada para piel normal" class="skin-card-bg">
+            <div class="skin-card-content" data-tag="Piel Normal">
+              <div class="skin-card-top">
+                <h3>Piel Normal</h3>
+                <p>Se siente equilibrada, cómoda, ni demasiado grasa ni seca, con brotes poco comunes.</p>
+              </div>
+              <a href="#" class="skin-card-arrow quiz-trigger" aria-label="Encontrar soluciones para piel normal">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Oily Skin -->
+          <div class="skin-card">
+            <img src="assets/texture_oily.png" alt="Textura gel para piel grasa" class="skin-card-bg">
+            <div class="skin-card-content" data-tag="Piel Grasa">
+              <div class="skin-card-top">
+                <h3>Piel Grasa</h3>
+                <p>Presenta brillo visible, poros agrandados y es propensa a brotes o puntos negros.</p>
+              </div>
+              <a href="#" class="skin-card-arrow quiz-trigger" aria-label="Encontrar soluciones para piel grasa">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="btn btn-quiz-premium quiz-trigger reveal">
+          <span>Realizar el Test &rarr;</span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- Tu Rutina Recomendada Section -->
+    <section class="routine-section section-spacer" id="routine">
+      <div class="container routine-grid">
+        
+        <!-- Column 1: Image -->
+        <div class="routine-visual reveal">
+          <div class="routine-img-wrapper">
+            <img src="assets/routine_lineup.png" alt="Frascos premium de HUMBRA elegantemente organizados, que incluyen limpiador, suero, tónico y crema" class="routine-img">
+          </div>
+        </div>
+
+        <!-- Column 2: Details -->
+        <div class="routine-content reveal">
+          <span class="routine-tag">Solo Para Ti</span>
+          <h2 class="routine-title">Tu Rutina Recomendada</h2>
+          <p class="routine-desc">Cuidado de la piel personalizado y simple.</p>
+          
+          <div style="margin-bottom: 2rem;">
+            <h4 style="font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--azul-profundo); margin-bottom: 0.5rem;">Para Piel Mixta</h4>
+            <p style="font-size: 0.95rem; color: var(--gris-claro);">Cuidado equilibrado para claridad, hidratación profunda y brillo celular natural.</p>
+          </div>
+
+          <!-- Feature items -->
+          <div class="routine-list">
+            <div class="routine-item">
+              <svg class="routine-item-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Hidrata sin pesadez</span>
+            </div>
+            <div class="routine-item">
+              <svg class="routine-item-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Fortalece la barrera cutánea</span>
+            </div>
+            <div class="routine-item">
+              <svg class="routine-item-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Controla el brillo y minimiza los poros</span>
+            </div>
+            <div class="routine-item">
+              <svg class="routine-item-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Fórmula calmante y no irritante</span>
+            </div>
+          </div>
+
+          <button class="btn btn-primary add-to-cart-action" data-product="Kit Completo de Rutina Mixta" data-price="124">
+            <span>Comprar la Rutina</span>
+          </button>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Benefits Ribbon -->
+    <section class="benefits-bar">
+      <div class="container benefits-grid">
+        
+        <!-- Item 1 -->
+        <div class="benefit-item">
+          <svg class="benefit-icon" viewBox="0 0 24 24">
+            <rect x="1" y="3" width="15" height="13"></rect>
+            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+          </svg>
+          <span class="benefit-title">Envío Gratis</span>
+          <span class="benefit-text">En todos los pedidos superiores a $50</span>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="benefit-item">
+          <svg class="benefit-icon" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <span class="benefit-title">Dermatológicamente</span>
+          <span class="benefit-text">Probado y Certificado</span>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="benefit-item">
+          <svg class="benefit-icon" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+            <path d="M2 17l10 5 10-5"></path>
+            <path d="M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="benefit-title">Fórmulas Limpias</span>
+          <span class="benefit-text">Ingredientes conscientes</span>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="benefit-item">
+          <svg class="benefit-icon" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+          </svg>
+          <span class="benefit-title">Piel Sensible</span>
+          <span class="benefit-text">Suave e hipoalergénica</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sobre Humbra Section -->
+    <section class="about-section section-spacer" id="about">
+
+      <!-- Ambient decorative blobs -->
+      <div class="about-blob about-blob--1" aria-hidden="true"></div>
+      <div class="about-blob about-blob--2" aria-hidden="true"></div>
+
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="about-header text-center">
+          <span class="eyebrow about-eyebrow">Sobre Humbra</span>
+          <h2 class="section-title about-title reveal">El cuidado de la piel<br>que te entiende.</h2>
+          <p class="section-subtitle about-subtitle reveal">
+            Inspirado en la naturaleza. Respaldado por la ciencia. Creado para ti y el planeta.
+          </p>
+          <p class="about-tagline reveal">Where botanical care meets clinical precision.</p>
+        </div>
+
+        <!-- Premium Editorial Gallery -->
+        <div class="about-gallery reveal-stagger">
+
+          <!-- Card 1: Naturaleza -->
+          <div class="about-card about-card--left" data-index="01">
+            <div class="about-card-img-wrap">
+              <img src="assets/about_natural.png" alt="Hoja botánica con gotas de agua reflejando luz natural" class="about-card-img" loading="lazy">
+              <div class="about-card-overlay"></div>
+            </div>
+            <div class="about-card-label">
+              <span class="about-card-num">01</span>
+              <span class="about-card-tag">NATURE</span>
+            </div>
+            <div class="about-card-caption">
+              <h4>Botánico &amp; Puro</h4>
+              <p>Ingredientes de origen natural seleccionados por su eficacia y suavidad.</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Ciencia (central, más alta) -->
+          <div class="about-card about-card--center" data-index="02">
+            <div class="about-card-img-wrap">
+              <img src="assets/about_science.png" alt="Pipeta de laboratorio dispensando suero dorado" class="about-card-img" loading="lazy">
+              <div class="about-card-overlay"></div>
+            </div>
+            <div class="about-card-label">
+              <span class="about-card-num">02</span>
+              <span class="about-card-tag">SCIENCE</span>
+            </div>
+            <div class="about-card-caption">
+              <h4>Clínico &amp; Preciso</h4>
+              <p>Fórmulas respaldadas por dermatología para resultados visibles y medibles.</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Sostenibilidad -->
+          <div class="about-card about-card--right" data-index="03">
+            <div class="about-card-img-wrap">
+              <img src="assets/about_sustain.png" alt="Bosque de niebla al amanecer representando cuidado planetario" class="about-card-img" loading="lazy">
+              <div class="about-card-overlay"></div>
+            </div>
+            <div class="about-card-label">
+              <span class="about-card-num">03</span>
+              <span class="about-card-tag">SUSTAINABILITY</span>
+            </div>
+            <div class="about-card-caption">
+              <h4>Consciente &amp; Sostenible</h4>
+              <p>Envases reciclables, ingredientes responsables y distribución neutra en carbono.</p>
+            </div>
+          </div>
+
+        </div>
+        <!-- end .about-gallery -->
+
+      </div>
+    </section>
+
+    <!-- Nuestra Promesa Section -->
+    <section class="promise-section section-spacer text-center" id="promises">
+      <div class="container">
+        
+        <span class="eyebrow">Nuestra Promesa</span>
+        <blockquote class="promise-quote reveal">
+          "Creamos productos para el cuidado de la piel que resaltan tu brillo natural, aumentan tu confianza y respetan el mundo en el que vivimos."
+        </blockquote>
+
+        <div class="promise-grid reveal-stagger">
+          
+          <!-- Column 1 -->
+          <div class="promise-card">
+            <svg class="promise-icon" viewBox="0 0 24 24">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            </svg>
+            <h4 class="promise-title">Puro y Seguro</h4>
+            <p class="promise-desc">Ingredientes suaves y limpios en los que puedes confiar. Sin sulfatos tóxicos, parabenos ni microplásticos.</p>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="promise-card">
+            <svg class="promise-icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <h4 class="promise-title">Probado por la Ciencia</h4>
+            <p class="promise-desc">Fórmulas avanzadas diseñadas con investigación dermatológica para resultados clínicos visibles.</p>
+          </div>
+
+          <!-- Column 3 -->
+          <div class="promise-card">
+            <svg class="promise-icon" viewBox="0 0 24 24">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <h4 class="promise-title">Libre de Crueldad</h4>
+            <p class="promise-desc">Nunca realizamos pruebas en animales. Porque la amabilidad, la empatía y la conciencia activa importan.</p>
+          </div>
+
+          <!-- Column 4 -->
+          <div class="promise-card">
+            <svg class="promise-icon" viewBox="0 0 24 24">
+              <path d="M2 22s1.5-2 3.5-2 3.5 2 5.5 2 3.5-2 5.5-2 3.5 2 5.5 2 1.5-2 1.5-2V4s-1.5 2-3.5 2-3.5-2-5.5-2-3.5 2-5.5 2-3.5-2-5.5-2-1.5 2-1.5 2v18z"></path>
+            </svg>
+            <h4 class="promise-title">Sostenible</h4>
+            <p class="promise-desc">Abastecimiento responsable, envases de vidrio reciclables y líneas de distribución neutras en carbono.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Más Cerca de Ti Section -->
+    <section class="closer-section section-spacer text-center" id="closer">
+      <div class="container">
+        
+        <span class="eyebrow">Más Cerca de Ti</span>
+        <h2 class="section-title reveal">Estamos aquí, siempre.</h2>
+        <p class="section-subtitle reveal">Tu viaje en el cuidado de la piel nos importa. Brillemos juntos.</p>
+
+        <div class="closer-grid reveal-stagger">
+          
+          <!-- Card 1 -->
+          <div class="closer-card">
+            <div class="closer-card-top">
+              <h3>Asistente de Piel con IA</h3>
+              <p>Recomendaciones de rutinas personalizadas calibradas dinámicamente solo para ti.</p>
+            </div>
+            <a href="#" class="text-link quiz-trigger">
+              COMENZAR
+              <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="closer-card">
+            <div class="closer-card-top">
+              <h3>Soporte Experto</h3>
+              <p>Nuestro equipo profesional de cuidado de la piel está aquí para responder cualquier duda sobre los productos.</p>
+            </div>
+            <a href="mailto:support@humbra.com" class="text-link">
+              CONTÁCTENOS
+              <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="closer-card">
+            <div class="closer-card-top">
+              <h3>Comunidad</h3>
+              <p>Únete a una comunidad solidaria que comparte consejos saludables, historias y brillo natural.</p>
+            </div>
+            <a href="#" class="text-link">
+              ÚNETE
+              <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="closer-card">
+            <div class="closer-card-top">
+              <h3>Para Ti</h3>
+              <p>Cada fórmula de producto está hecha con un cuidado consciente en mente.</p>
+            </div>
+            <a href="#about" class="text-link">
+              MÁS INFORMACIÓN
+              <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Premium Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Logo Column -->
+        <div class="footer-logo-col">
+          <div class="logo-wrapper" style="margin-bottom: 1.5rem;">
+            <svg class="logo-icon" viewBox="0 0 24 24">
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-3.3 0-6-2.7-6-6 0-2.4 1.4-4.5 3.5-5.4.3.4.7.7 1.2.9.3.1.6.2.9.2.5 0 1-.2 1.4-.5.4.3.9.5 1.4.5.3 0 .6-.1.9-.2.5-.2.9-.5 1.2-.9 2.1.9 3.5 3 3.5 5.4 0 3.3-2.7 6-6 6z"/>
+            </svg>
+            <span class="logo-text">Humbra</span>
+          </div>
+          <p class="footer-desc">
+            Creamos fórmulas de cuidado de la piel limpias y de grado dermatológico altamente especializadas para restaurar el equilibrio de la piel y liberar su brillo natural.
+          </p>
+        </div>
+
+        <!-- Links Column 1 -->
+        <div>
+          <h4 class="footer-title">Explorar</h4>
+          <div class="footer-links">
+            <a href="#shop" class="footer-link">Tienda</a>
+            <a href="#skin-type" class="footer-link">Tipos de Piel</a>
+            <a href="#about" class="footer-link">Nosotros</a>
+            <a href="#routine" class="footer-link">Guía de Rutina</a>
+            <a href="#closer" class="footer-link">Blog</a>
+          </div>
+        </div>
+
+        <!-- Links Column 2 -->
+        <div>
+          <h4 class="footer-title">Soporte</h4>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Contacto</a>
+            <a href="#" class="footer-link">Preguntas Frecuentes</a>
+            <a href="#" class="footer-link">Envíos</a>
+            <a href="#" class="footer-link">Devoluciones y Cambios</a>
+            <a href="#" class="footer-link">Programa de Sostenibilidad</a>
+          </div>
+        </div>
+
+        <!-- Newsletter & Socials Column -->
+        <div class="footer-newsletter-col">
+          <h4 class="footer-title">Mantente Conectado</h4>
+          <p class="footer-desc" style="margin-bottom: 1rem;">Suscríbete para recibir consejos, nuevos productos y ofertas exclusivas.</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" placeholder="Tu correo electrónico" class="newsletter-input" required aria-label="Ingresa tu correo para suscribirte">
+            <button type="submit" class="newsletter-btn" aria-label="Botón de suscripción">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </form>
+          
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="Página de Instagram">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Página de Facebook">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Página de Twitter">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Legal & Rights -->
+      <div class="footer-bottom">
+        <span>&copy; 2026 HUMBRA Productos para la Piel. Todos los derechos reservados.</span>
+        <div class="footer-legal-links">
+          <a href="#">Política de Privacidad</a>
+          <a href="#">Términos y Condiciones</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Interactive Skin Quiz Modal Window -->
+  <div class="quiz-modal" id="quiz-modal">
+    <div class="quiz-container">
+      <button class="quiz-close" id="quiz-close" aria-label="Cerrar test">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Quiz Step 1 -->
+      <div class="quiz-step active" data-step="1">
+        <h2 class="quiz-title">Diagnóstico de Piel</h2>
+        <p class="quiz-desc">Paso 1 de 3: ¿Cómo se siente tu piel en la tarde?</p>
+        <div class="quiz-options">
+          <button class="quiz-option" data-answer="dry">Tirante, descamada o visualmente opaca</button>
+          <button class="quiz-option" data-answer="normal">Perfectamente equilibrada e hidratada</button>
+          <button class="quiz-option" data-answer="oily">Brillante en la frente, nariz y mejillas</button>
+        </div>
+      </div>
+
+      <!-- Quiz Step 2 -->
+      <div class="quiz-step" data-step="2">
+        <h2 class="quiz-title">Diagnóstico de Piel</h2>
+        <p class="quiz-desc">Paso 2 de 3: ¿Cuál es tu principal preocupación dermatológica?</p>
+        <div class="quiz-options">
+          <button class="quiz-option" data-answer="dry">Sequedad, líneas finas o falta de elasticidad</button>
+          <button class="quiz-option" data-answer="normal">Mantener la salud y prevención</button>
+          <button class="quiz-option" data-answer="oily">Exceso de sebo, brotes y poros dilatados</button>
+        </div>
+      </div>
+
+      <!-- Quiz Step 3 -->
+      <div class="quiz-step" data-step="3">
+        <h2 class="quiz-title">Diagnóstico de Piel</h2>
+        <p class="quiz-desc">Paso 3 de 3: Selecciona tu textura preferida:</p>
+        <div class="quiz-options">
+          <button class="quiz-option" data-answer="dry">Crema/bálsamo fundente y rica</button>
+          <button class="quiz-option" data-answer="normal">Loción acuosa sedosa y ligera</button>
+          <button class="quiz-option" data-answer="oily">Gel libre de aceite, ligero y refrescante</button>
+        </div>
+      </div>
+
+      <!-- Loading Result State -->
+      <div class="quiz-step" id="quiz-loading-step">
+        <div class="quiz-loading">
+          <div class="spinner"></div>
+          <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--azul-profundo);">Analizando tu Perfil de Piel...</h3>
+          <p style="color: var(--gris-claro); font-size: 0.85rem; margin-top: 0.5rem;">Calibrando fórmula personalizada...</p>
+        </div>
+      </div>
+
+      <!-- Final Result State -->
+      <div class="quiz-step" id="quiz-result-step">
+        <h2 class="quiz-results-title" id="quiz-results-header">¡Tu Rutina está Lista!</h2>
+        <p class="quiz-desc" id="quiz-results-text">Tu rutina personalizada está siendo preparada.</p>
+        
+        <div style="background-color: var(--beige-crema); padding: 1.5rem; margin-bottom: 2rem; border-radius: 0;">
+          <h4 style="font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--azul-profundo); margin-bottom: 0.5rem;" id="quiz-result-type-tag">Recomendado: Cuidado para Piel Mixta</h4>
+          <p style="font-size: 0.85rem; color: var(--gris-medio);" id="quiz-result-type-desc">Formulado para hidratar zonas secas mientras regula el sebo en la Zona T.</p>
+        </div>
+
+        <button class="btn btn-primary" id="quiz-done-btn">
+          <span>Aplicar Recomendaciones</span>
+        </button>
+      </div>
+
+      <!-- Quiz progress visual indicators -->
+      <div class="quiz-progress-bar" id="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
