@@ -1721,18 +1721,123 @@ ul {
   width: 50%;
 }
 
-/* Closer To You Section */
+/* =========================================================
+   MÁS CERCA DE TI — Premium Aesthetic
+   ========================================================= */
+
 .closer-section {
+  position: relative;
   background-color: var(--blanco);
+  overflow: hidden;
+  padding: 8rem 0 10rem 0;
+  z-index: 1;
 }
 
+/* ── Ambient Background Glows ── */
+.closer-bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(120px);
+  z-index: -2;
+  opacity: 0.5;
+}
+
+.closer-bg-glow--1 {
+  width: 700px;
+  height: 700px;
+  top: -200px;
+  right: -250px;
+  background: radial-gradient(circle, rgba(176, 157, 134, 0.35), transparent 70%);
+}
+
+.closer-bg-glow--2 {
+  width: 500px;
+  height: 500px;
+  bottom: -150px;
+  left: -200px;
+  background: radial-gradient(circle, rgba(3, 57, 102, 0.12), transparent 70%);
+}
+
+.closer-bg-glow--3 {
+  width: 400px;
+  height: 400px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(239, 227, 213, 0.4), transparent 70%);
+}
+
+.closer-bg-texture {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  z-index: -1;
+}
+
+.closer-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Editorial Header ── */
+.closer-header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.closer-header-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.closer-eyebrow {
+  display: block;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--azul-grisaceo), var(--azul-profundo));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.closer-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--azul-profundo);
+  margin-bottom: 1.5rem;
+}
+
+.closer-title .text-italic {
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.closer-line-deco {
+  height: 1px;
+  width: 60px;
+  background: var(--azul-grisaceo);
+  margin: 0 auto 1.5rem auto;
+  opacity: 0.5;
+}
+
+.closer-subtitle {
+  font-family: var(--font-sans);
+  color: var(--gris-oscuro);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ── Premium Grid ── */
 .closer-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .closer-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -1746,33 +1851,156 @@ ul {
   }
 }
 
-.closer-card {
-  background-color: var(--blanco);
-  border: 1px solid rgba(239, 227, 213, 0.4);
+/* ── Premium Glassmorphic Cards ── */
+.premium-glass-card {
+  position: relative;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
   padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 280px;
-  transition: var(--transition);
+  min-height: 320px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
 }
 
-.closer-card:hover {
-  border-color: var(--azul-profundo);
-  box-shadow: var(--shadow-soft);
-  transform: translateY(-4px);
+.premium-glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.2) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
-.closer-card-top h3 {
+/* ── Icon Wrap ── */
+.closer-icon-wrap {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closer-icon-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 15px 5px var(--azul-profundo);
+  opacity: 0.08;
+  transition: opacity 0.5s ease, box-shadow 0.5s ease;
+}
+
+.closer-icon-wrap svg {
+  width: 24px;
+  height: 24px;
+  color: var(--azul-profundo);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ── Text Content ── */
+.closer-card-content h3 {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  color: var(--azul-profundo);
   margin-bottom: 0.8rem;
 }
 
-.closer-card-top p {
-  color: var(--gris-claro);
+.closer-card-content p {
   font-size: 0.85rem;
+  color: var(--gris-oscuro);
   line-height: 1.6;
+  opacity: 0.85;
+  margin-bottom: 2rem;
+}
+
+/* ── Premium Text Link ── */
+.premium-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--azul-profundo);
+  text-decoration: none;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+.link-text {
+  position: relative;
+}
+
+.link-text::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.link-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(3, 57, 102, 0.2);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              background 0.4s ease,
+              border-color 0.4s ease,
+              color 0.4s ease;
+}
+
+/* ── Card Hover Effects ── */
+.premium-glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(3, 57, 102, 0.08),
+              0 0 0 1px rgba(255,255,255,0.8) inset;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.premium-glass-card:hover .closer-icon-glow {
+  opacity: 0.25;
+  box-shadow: 0 0 25px 10px var(--azul-profundo);
+}
+
+.premium-glass-card:hover .closer-icon-wrap svg {
+  transform: translateY(-4px) scale(1.05);
+}
+
+.premium-glass-card:hover .link-text::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.premium-glass-card:hover .link-arrow {
+  transform: translateX(4px);
+  background: var(--azul-profundo);
+  border-color: var(--azul-profundo);
+  color: var(--blanco);
 }
 
 /* Premium Footer */
@@ -2521,36 +2749,36 @@ ul {
   pointer-events: none;
 }
 
-/* ─── Premium Custom Cursor: Glowing Droplet ─── */
-#cursor-glow {
+/* ─── Premium Dot & Ring Cursor ─── */
+#cursor-dot, #cursor-ring {
   position: fixed;
   top: 0;
   left: 0;
-  width: 24px;
-  height: 24px;
-  background-color: var(--blanco);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  will-change: transform, width, height, opacity, background-color;
   mix-blend-mode: difference;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: transparent;
+  will-change: transform, width, height, opacity;
 }
 
-.cursor-glow-inner {
-  width: 6px;
-  height: 6px;
-  background-color: var(--azul-profundo);
-  border-radius: 50%;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+#cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  transition: opacity 0.3s ease;
 }
 
-#cursor-glow[style*="scale: 2"] .cursor-glow-inner {
-  opacity: 1; /* Shows a tiny dot inside when expanded */
+#cursor-ring {
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid #fff;
+  transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              background-color 0.3s ease,
+              border-color 0.3s ease,
+              opacity 0.3s ease;
 }
 
 /* Hide default cursor on interactive elements */
@@ -2560,7 +2788,7 @@ a, button, .btn, .skin-card, .about-card, .premium-card, .closer-card, .nav-link
 
 /* Hide custom cursor on touch/mobile */
 @media (hover: none) and (pointer: coarse) {
-  #cursor-glow { display: none !important; }
+  #cursor-dot, #cursor-ring { display: none !important; }
   * { cursor: auto !important; }
   a, button, .btn, .skin-card, .about-card, .premium-card, .closer-card, .nav-link, input, select {
     cursor: pointer !important;

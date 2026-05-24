@@ -52,79 +52,82 @@
   }
 
   /* ══════════════════════════════════════════════
-     3. PREMIUM CUSTOM CURSOR (GSAP Liquid Follower)
+     3. PREMIUM CUSTOM CURSOR (Dot & Ring Follower)
   ══════════════════════════════════════════════ */
-  const cursorGlow = document.getElementById('cursor-glow');
+  const cursorDot = document.getElementById('cursor-dot');
+  const cursorRing = document.getElementById('cursor-ring');
 
-  if (!isTouchDevice() && cursorGlow) {
-    // Hide default cursor
+  if (!isTouchDevice() && cursorDot && cursorRing) {
     document.body.style.cursor = 'none';
 
-    // Track mouse position
     let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-    let pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-    let speed = 0.15; // smooth interpolation
+    let ringPos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    let dotPos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    let ringSpeed = 0.15;
+    let dotSpeed = 0.5;
 
     window.addEventListener('mousemove', (e) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
     });
 
-    // GSAP Ticker for ultra-smooth rendering
     gsap.ticker.add(() => {
-      pos.x += (mouse.x - pos.x) * speed;
-      pos.y += (mouse.y - pos.y) * speed;
+      // Interpolate dot (fast)
+      dotPos.x += (mouse.x - dotPos.x) * dotSpeed;
+      dotPos.y += (mouse.y - dotPos.y) * dotSpeed;
       
-      gsap.set(cursorGlow, {
-        x: pos.x,
-        y: pos.y
-      });
+      // Interpolate ring (lagging)
+      ringPos.x += (mouse.x - ringPos.x) * ringSpeed;
+      ringPos.y += (mouse.y - ringPos.y) * ringSpeed;
+      
+      gsap.set(cursorDot, { x: dotPos.x, y: dotPos.y });
+      gsap.set(cursorRing, { x: ringPos.x, y: ringPos.y });
     });
 
-    // Magnetic interaction & hover states
+    // Hover interactions
     const interactables = 'a, button, .btn, .skin-card, .about-card, .premium-card, .closer-card, .nav-link, input, select';
     
     document.querySelectorAll(interactables).forEach(el => {
       el.addEventListener('mouseenter', () => {
-        // Expand the cursor into a soft halo
-        gsap.to(cursorGlow, {
-          scale: 2.2,
-          opacity: 0.85,
-          duration: 0.5,
-          ease: 'power3.out',
-          mixBlendMode: 'normal',
-          backgroundColor: 'rgba(3, 57, 102, 0.05)'
+        // Dot hides
+        gsap.to(cursorDot, { opacity: 0, duration: 0.2, ease: 'power2.out' });
+        
+        // Ring expands but stays completely transparent inside to never blur logos/icons
+        gsap.to(cursorRing, {
+          width: 60,
+          height: 60,
+          opacity: 1,
+          borderColor: '#ffffff',
+          backgroundColor: 'transparent',
+          duration: 0.4,
+          ease: 'power3.out'
         });
         
-        // Add magnetic pull to the element itself if it's a small button or link
         if (el.tagName.toLowerCase() === 'a' || el.tagName.toLowerCase() === 'button' || el.classList.contains('btn')) {
-           el.style.cursor = 'none'; // Ensure default cursor doesn't flash
+           el.style.cursor = 'none';
         }
       });
 
       el.addEventListener('mouseleave', () => {
-        // Return cursor to default sleek dot
-        gsap.to(cursorGlow, {
-          scale: 1,
+        // Dot returns
+        gsap.to(cursorDot, { opacity: 1, duration: 0.3, ease: 'power2.out' });
+        
+        // Ring returns to normal
+        gsap.to(cursorRing, {
+          width: 44,
+          height: 44,
           opacity: 1,
-          duration: 0.6,
-          ease: 'power3.out',
-          mixBlendMode: 'difference',
-          backgroundColor: 'rgba(255, 255, 255, 1)'
+          borderColor: '#ffffff',
+          backgroundColor: 'transparent',
+          duration: 0.5,
+          ease: 'power3.out'
         });
         
-        // Reset magnetic position on the element
-        gsap.to(el, {
-          x: 0,
-          y: 0,
-          duration: 0.5,
-          ease: 'elastic.out(1, 0.5)'
-        });
+        gsap.to(el, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.5)' });
       });
 
-      // Subtle magnetic effect on the element as cursor moves over it
+      // Subtle magnetic pull
       el.addEventListener('mousemove', (e) => {
-        // Only apply magnetic pull to small elements like buttons/links, not large cards
         if (el.tagName.toLowerCase() === 'a' || el.tagName.toLowerCase() === 'button' || el.classList.contains('btn')) {
           const rect = el.getBoundingClientRect();
           const centerX = rect.left + rect.width / 2;
@@ -132,18 +135,10 @@
           const moveX = (e.clientX - centerX) * 0.15;
           const moveY = (e.clientY - centerY) * 0.15;
           
-          gsap.to(el, {
-            x: moveX,
-            y: moveY,
-            duration: 0.4,
-            ease: 'power2.out'
-          });
+          gsap.to(el, { x: moveX, y: moveY, duration: 0.4, ease: 'power2.out' });
         }
       });
     });
-    
-    // Initial State Setting
-    gsap.set(cursorGlow, { mixBlendMode: 'difference' });
   }
 
   /* ══════════════════════════════════════════════

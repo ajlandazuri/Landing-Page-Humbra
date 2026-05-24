@@ -14,11 +14,9 @@
 </head>
 <body>
 
-  <!-- Premium Custom Cursor -->
-  <div id="cursor-glow" aria-hidden="true">
-    <div class="cursor-glow-inner"></div>
-    <div class="cursor-particles"></div>
-  </div>
+  <!-- Premium Dot & Ring Cursor -->
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
 
   <!-- Scroll Progress Bar -->
   <div id="scroll-progress" aria-hidden="true"></div>
@@ -49,19 +47,11 @@
       <!-- Header Action Utilities -->
       <div class="header-utilities">
         
-        <!-- Search Button -->
-        <button class="utility-btn" id="search-btn" aria-label="Buscar en el sitio">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-        </button>
-
 
 
         <!-- Botón de Pedidos por WhatsApp -->
-        <a href="https://wa.me/593995146583?text=Hola%20HUMBRA,%20me%20gustar%C3%ADa%20hacer%20una%20consulta%20o%20pedido." target="_blank" class="utility-btn" aria-label="Hacer Pedido por WhatsApp" style="color: inherit; display: flex; align-items: center; justify-content: center; text-decoration: none;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;">
+        <a href="https://wa.me/593995146583?text=Hola%20HUMBRA,%20me%20gustar%C3%ADa%20hacer%20una%20consulta%20o%20pedido." target="_blank" class="utility-btn" aria-label="Hacer Pedido por WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
           </svg>
         </a>
@@ -520,73 +510,124 @@
       </div>
     </section>
 
-    <!-- Más Cerca de Ti Section -->
-    <section class="closer-section section-spacer text-center" id="closer">
-      <div class="container">
-        
-        <span class="eyebrow">Más Cerca de Ti</span>
-        <h2 class="section-title reveal">Estamos aquí, siempre.</h2>
-        <p class="section-subtitle reveal">Tu viaje en el cuidado de la piel nos importa. Brillemos juntos.</p>
+    <!-- Más Cerca de Ti Section — Ultra Premium -->
+    <section class="closer-section section-spacer" id="closer">
+      
+      <!-- Liquid & Glow Ambient Background -->
+      <div class="closer-bg-glow closer-bg-glow--1"></div>
+      <div class="closer-bg-glow closer-bg-glow--2"></div>
+      <div class="closer-bg-glow closer-bg-glow--3"></div>
+      <div class="closer-bg-texture"></div>
 
+      <div class="container closer-container">
+        
+        <!-- Cinematic Editorial Header -->
+        <div class="closer-header reveal">
+          <div class="closer-header-inner">
+            <span class="eyebrow closer-eyebrow">Más Cerca de Ti</span>
+            <h2 class="section-title closer-title">Estamos aquí, <span class="text-italic">siempre.</span></h2>
+            <div class="closer-line-deco"></div>
+            <p class="section-subtitle closer-subtitle">Tu viaje en el cuidado de la piel nos importa. Brillemos juntos.</p>
+          </div>
+        </div>
+
+        <!-- Premium Glassmorphic Grid -->
         <div class="closer-grid reveal-stagger">
           
           <!-- Card 1 -->
-          <div class="closer-card">
-            <div class="closer-card-top">
+          <div class="closer-card premium-glass-card">
+            <div class="closer-icon-wrap">
+              <div class="closer-icon-glow"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke-width="1.5"/>
+                <path d="M12 16V12" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="12" cy="8" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <div class="closer-card-content">
               <h3>Asistente de Piel con IA</h3>
               <p>Recomendaciones de rutinas personalizadas calibradas dinámicamente solo para ti.</p>
             </div>
-            <a href="#" class="text-link quiz-trigger">
-              COMENZAR
-              <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
+            <a href="#" class="premium-text-link quiz-trigger">
+              <span class="link-text">COMENZAR</span>
+              <span class="link-arrow">
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
             </a>
           </div>
 
           <!-- Card 2 -->
-          <div class="closer-card">
-            <div class="closer-card-top">
+          <div class="closer-card premium-glass-card">
+            <div class="closer-icon-wrap">
+              <div class="closer-icon-glow"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="closer-card-content">
               <h3>Soporte Experto</h3>
               <p>Nuestro equipo profesional de cuidado de la piel está aquí para responder cualquier duda sobre los productos.</p>
             </div>
-            <a href="mailto:support@humbra.com" class="text-link">
-              CONTÁCTENOS
-              <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
+            <a href="mailto:support@humbra.com" class="premium-text-link">
+              <span class="link-text">CONTÁCTENOS</span>
+              <span class="link-arrow">
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
             </a>
           </div>
 
           <!-- Card 3 -->
-          <div class="closer-card">
-            <div class="closer-card-top">
+          <div class="closer-card premium-glass-card">
+            <div class="closer-icon-wrap">
+              <div class="closer-icon-glow"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="9" cy="7" r="4" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="closer-card-content">
               <h3>Comunidad</h3>
               <p>Únete a una comunidad solidaria que comparte consejos saludables, historias y brillo natural.</p>
             </div>
-            <a href="#" class="text-link">
-              ÚNETE
-              <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
+            <a href="#" class="premium-text-link">
+              <span class="link-text">ÚNETE</span>
+              <span class="link-arrow">
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
             </a>
           </div>
 
           <!-- Card 4 -->
-          <div class="closer-card">
-            <div class="closer-card-top">
+          <div class="closer-card premium-glass-card">
+            <div class="closer-icon-wrap">
+              <div class="closer-icon-glow"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="closer-card-content">
               <h3>Para Ti</h3>
               <p>Cada fórmula de producto está hecha con un cuidado consciente en mente.</p>
             </div>
-            <a href="#about" class="text-link">
-              MÁS INFORMACIÓN
-              <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
+            <a href="#about" class="premium-text-link">
+              <span class="link-text">MÁS INFORMACIÓN</span>
+              <span class="link-arrow">
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
             </a>
           </div>
 
