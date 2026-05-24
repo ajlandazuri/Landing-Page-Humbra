@@ -6,8 +6,22 @@
   <title>HUMBRA Productos para la Piel | Belleza Limpia y Cuidado de la Piel Premium</title>
   <meta name="description" content="Descubre HUMBRA Productos para la Piel. Fórmulas de alta gama probadas por dermatólogos, inspiradas en la naturaleza y respaldadas por la ciencia para una piel sana y radiante.">
   <link rel="stylesheet" href="styles.css">
+  <!-- GSAP Animation Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.33/bundled/lenis.min.js"></script>
 </head>
 <body>
+
+  <!-- Premium Custom Cursor -->
+  <div id="cursor-glow" aria-hidden="true">
+    <div class="cursor-glow-inner"></div>
+    <div class="cursor-particles"></div>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" aria-hidden="true"></div>
 
   <!-- Premium Header -->
   <header class="site-header" id="header">
@@ -413,57 +427,96 @@
       </div>
     </section>
 
-    <!-- Nuestra Promesa Section -->
-    <section class="promise-section section-spacer text-center" id="promises">
-      <div class="container">
-        
-        <span class="eyebrow">Nuestra Promesa</span>
-        <blockquote class="promise-quote reveal">
-          "Creamos productos para el cuidado de la piel que resaltan tu brillo natural, aumentan tu confianza y respetan el mundo en el que vivimos."
-        </blockquote>
+    <!-- Nuestra Promesa Section — Ultra Premium -->
+    <section class="promise-section section-spacer" id="promises">
+      
+      <!-- Ambient Luxury Backgrounds -->
+      <div class="promise-bg-glow promise-bg-glow--1"></div>
+      <div class="promise-bg-glow promise-bg-glow--2"></div>
+      <div class="promise-bg-glass"></div>
 
+      <div class="container promise-container">
+        
+        <!-- Editorial Quote Header -->
+        <div class="promise-header reveal">
+          <div class="promise-header-left">
+            <span class="eyebrow promise-eyebrow">Nuestra Promesa</span>
+            <div class="promise-line-deco"></div>
+          </div>
+          <div class="promise-header-right">
+            <blockquote class="promise-quote">
+              <span class="quote-mark">“</span>
+              Creamos productos para el cuidado de la piel que resaltan tu brillo natural, aumentan tu confianza y respetan el mundo en el que vivimos.
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- Premium Glassmorphic Cards Grid -->
         <div class="promise-grid reveal-stagger">
           
-          <!-- Column 1 -->
-          <div class="promise-card">
-            <svg class="promise-icon" viewBox="0 0 24 24">
-              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
-            </svg>
-            <h4 class="promise-title">Puro y Seguro</h4>
-            <p class="promise-desc">Ingredientes suaves y limpios en los que puedes confiar. Sin sulfatos tóxicos, parabenos ni microplásticos.</p>
+          <!-- Card 1: Puro y Seguro -->
+          <div class="promise-card premium-card">
+            <div class="premium-card-inner">
+              <div class="premium-icon-wrap">
+                <div class="premium-icon-glow"></div>
+                <svg class="premium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9 12L11 14L15 10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h4 class="promise-title">Puro y Seguro</h4>
+              <p class="promise-desc">Ingredientes suaves y limpios en los que puedes confiar. Sin sulfatos tóxicos, parabenos ni microplásticos.</p>
+              <div class="card-hover-border"></div>
+            </div>
           </div>
 
-          <!-- Column 2 -->
-          <div class="promise-card">
-            <svg class="promise-icon" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="2" y1="12" x2="22" y2="12"></line>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-            </svg>
-            <h4 class="promise-title">Probado por la Ciencia</h4>
-            <p class="promise-desc">Fórmulas avanzadas diseñadas con investigación dermatológica para resultados clínicos visibles.</p>
+          <!-- Card 2: Probado por la Ciencia -->
+          <div class="promise-card premium-card">
+            <div class="premium-card-inner">
+              <div class="premium-icon-wrap">
+                <div class="premium-icon-glow"></div>
+                <svg class="premium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M9 3H15M10 9H14M3 21H21M7 21V19C7 17.8954 7.89543 17 9 17H15C16.1046 17 17 17.8954 17 19V21M9 17V7C9 4.79086 10.7909 3 13 3V3C14.1046 3 15 3.89543 15 5V17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="12" cy="13" r="2" fill="currentColor" stroke="none" />
+                </svg>
+              </div>
+              <h4 class="promise-title">Probado por la Ciencia</h4>
+              <p class="promise-desc">Fórmulas avanzadas diseñadas con investigación dermatológica para resultados clínicos visibles.</p>
+              <div class="card-hover-border"></div>
+            </div>
           </div>
 
-          <!-- Column 3 -->
-          <div class="promise-card">
-            <svg class="promise-icon" viewBox="0 0 24 24">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-            </svg>
-            <h4 class="promise-title">Libre de Crueldad</h4>
-            <p class="promise-desc">Nunca realizamos pruebas en animales. Porque la amabilidad, la empatía y la conciencia activa importan.</p>
+          <!-- Card 3: Libre de Crueldad -->
+          <div class="promise-card premium-card">
+            <div class="premium-card-inner">
+              <div class="premium-icon-wrap">
+                <div class="premium-icon-glow"></div>
+                <svg class="premium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h4 class="promise-title">Libre de Crueldad</h4>
+              <p class="promise-desc">Nunca realizamos pruebas en animales. Porque la amabilidad, la empatía y la conciencia activa importan.</p>
+              <div class="card-hover-border"></div>
+            </div>
           </div>
 
-          <!-- Column 4 -->
-          <div class="promise-card">
-            <svg class="promise-icon" viewBox="0 0 24 24">
-              <path d="M2 22s1.5-2 3.5-2 3.5 2 5.5 2 3.5-2 5.5-2 3.5 2 5.5 2 1.5-2 1.5-2V4s-1.5 2-3.5 2-3.5-2-5.5-2-3.5 2-5.5 2-3.5-2-5.5-2-1.5 2-1.5 2v18z"></path>
-            </svg>
-            <h4 class="promise-title">Sostenible</h4>
-            <p class="promise-desc">Abastecimiento responsable, envases de vidrio reciclables y líneas de distribución neutras en carbono.</p>
+          <!-- Card 4: Sostenible -->
+          <div class="promise-card premium-card">
+            <div class="premium-card-inner">
+              <div class="premium-icon-wrap">
+                <div class="premium-icon-glow"></div>
+                <svg class="premium-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 2L15 8L22 9L17 14L18.5 21L12 17.5L5.5 21L7 14L2 9L9 8L12 2Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h4 class="promise-title">Sostenible</h4>
+              <p class="promise-desc">Abastecimiento responsable, envases de vidrio reciclables y líneas de distribución neutras en carbono.</p>
+              <div class="card-hover-border"></div>
+            </div>
           </div>
 
         </div>
-
       </div>
     </section>
 
@@ -711,5 +764,6 @@
   </div>
 
   <script src="script.js"></script>
+  <script src="animations.js"></script>
 </body>
 </html>

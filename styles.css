@@ -1467,55 +1467,212 @@ ul {
   transform: scale(1.05);
 }
 
-/* Promise Section */
+/* =========================================================
+   NUESTRA PROMESA — Premium Aesthetic
+   ========================================================= */
+
 .promise-section {
-  background-color: rgba(239, 227, 213, 0.1);
-  border-top: 1px solid rgba(239, 227, 213, 0.3);
+  position: relative;
+  background-color: var(--beige-crema);
+  overflow: hidden;
+  padding: 8rem 0;
+  z-index: 1;
+}
+
+/* ── Ambient Background Glows ── */
+.promise-bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(100px);
+  z-index: -2;
+  opacity: 0.6;
+}
+
+.promise-bg-glow--1 {
+  width: 600px;
+  height: 600px;
+  top: -150px;
+  left: -200px;
+  background: radial-gradient(circle, rgba(176, 157, 134, 0.4), transparent 70%);
+}
+
+.promise-bg-glow--2 {
+  width: 500px;
+  height: 500px;
+  bottom: -100px;
+  right: -150px;
+  background: radial-gradient(circle, rgba(3, 57, 102, 0.15), transparent 70%);
+}
+
+.promise-bg-glass {
+  position: absolute;
+  inset: 0;
+  background: rgba(253, 248, 241, 0.3);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  z-index: -1;
+}
+
+.promise-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Editorial Header ── */
+.promise-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4rem;
+  margin-bottom: 6rem;
+  text-align: left;
+}
+
+.promise-header-left {
+  flex: 0 0 250px;
+}
+
+.promise-eyebrow {
+  display: block;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--azul-grisaceo), var(--azul-profundo));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.promise-line-deco {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(3, 57, 102, 0.2), transparent);
+}
+
+.promise-header-right {
+  flex: 1;
+  max-width: 800px;
 }
 
 .promise-quote {
+  position: relative;
   font-family: var(--font-serif);
   font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  line-height: 1.4;
+  line-height: 1.35;
   color: var(--azul-profundo);
-  max-width: 900px;
-  margin: 0 auto 5rem auto;
   font-weight: 300;
+  letter-spacing: -0.01em;
 }
 
-.promise-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
+.quote-mark {
+  position: absolute;
+  top: -1.5rem;
+  left: -2.5rem;
+  font-size: 5rem;
+  font-family: var(--font-serif);
+  color: rgba(176, 157, 134, 0.25);
+  line-height: 1;
 }
 
 @media (max-width: 992px) {
+  .promise-header {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .promise-header-left {
+    flex: none;
+    width: 100%;
+  }
+  .quote-mark {
+    left: -1rem;
+    top: -1rem;
+    font-size: 4rem;
+  }
+}
+
+/* ── Premium Grid ── */
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
   .promise-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
+    gap: 2rem;
   }
 }
 
 @media (max-width: 576px) {
   .promise-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 1.5rem;
   }
 }
 
-.promise-card {
+/* ── Premium Glassmorphic Cards ── */
+.premium-card {
+  position: relative;
   text-align: left;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
 }
 
-.promise-icon {
-  width: 28px;
-  height: 28px;
-  stroke: var(--azul-grisaceo);
-  stroke-width: 1.5;
-  fill: none;
-  margin-bottom: 1.5rem;
+.premium-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.1) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
+.premium-card-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Icon Wrap ── */
+.premium-icon-wrap {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.premium-icon-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--azul-profundo);
+  border-radius: 50%;
+  filter: blur(12px);
+  opacity: 0.1;
+  transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+.premium-icon {
+  width: 26px;
+  height: 26px;
+  color: var(--azul-profundo);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ── Text Content ── */
 .promise-title {
   font-family: var(--font-sans);
   font-size: 0.85rem;
@@ -1523,13 +1680,45 @@ ul {
   letter-spacing: 0.15em;
   color: var(--azul-profundo);
   text-transform: uppercase;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .promise-desc {
   font-size: 0.85rem;
-  color: var(--gris-claro);
-  line-height: 1.6;
+  color: var(--gris-oscuro);
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+/* ── Card Hover Effects ── */
+.card-hover-border {
+  position: absolute;
+  bottom: -2.5rem;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--azul-profundo), transparent);
+  transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.premium-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(3, 57, 102, 0.08),
+              0 0 0 1px rgba(255,255,255,0.7) inset;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.premium-card:hover .premium-icon-glow {
+  opacity: 0.25;
+  filter: blur(16px);
+}
+
+.premium-card:hover .premium-icon {
+  transform: translateY(-4px) scale(1.05);
+}
+
+.premium-card:hover .card-hover-border {
+  width: 50%;
 }
 
 /* Closer To You Section */
@@ -2279,3 +2468,294 @@ ul {
 
 
 
+
+
+/* ═══════════════════════════════════════════════════════════
+   HUMBRA — PREMIUM ANIMATION SYSTEM
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Preloader ─── */
+#humbra-preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--azul-profundo);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.preloader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.preloader-mark {
+  width: 72px;
+  height: 72px;
+  opacity: 0;
+}
+
+.preloader-brand {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.35em;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+/* ─── Scroll Progress Bar ─── */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, rgba(176, 157, 134, 0.6), var(--azul-grisaceo), rgba(176, 157, 134, 0.6));
+  z-index: 10000;
+  transition: width 0.05s linear;
+  pointer-events: none;
+}
+
+/* ─── Premium Custom Cursor: Glowing Droplet ─── */
+#cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background-color: var(--blanco);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  will-change: transform, width, height, opacity, background-color;
+  mix-blend-mode: difference;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor-glow-inner {
+  width: 6px;
+  height: 6px;
+  background-color: var(--azul-profundo);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+#cursor-glow[style*="scale: 2"] .cursor-glow-inner {
+  opacity: 1; /* Shows a tiny dot inside when expanded */
+}
+
+/* Hide default cursor on interactive elements */
+a, button, .btn, .skin-card, .about-card, .premium-card, .closer-card, .nav-link, input, select {
+  cursor: none !important;
+}
+
+/* Hide custom cursor on touch/mobile */
+@media (hover: none) and (pointer: coarse) {
+  #cursor-glow { display: none !important; }
+  * { cursor: auto !important; }
+  a, button, .btn, .skin-card, .about-card, .premium-card, .closer-card, .nav-link, input, select {
+    cursor: pointer !important;
+  }
+}
+
+/* ─── Page loaded state ─── */
+body.page-loaded {
+  cursor: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  body.page-loaded { cursor: auto; }
+}
+
+/* ─── Button Ripple ─── */
+.btn {
+  overflow: hidden;
+  position: relative;
+}
+
+.btn-ripple {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple-expand 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  pointer-events: none;
+}
+
+@keyframes ripple-expand {
+  to {
+    transform: translate(-50%, -50%) scale(120);
+    opacity: 0;
+  }
+}
+
+/* ─── Nav link underline animation ─── */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ─── Hamburger morph animation ─── */
+.hamburger span {
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.25s ease;
+}
+
+.hamburger.is-active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.is-active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ─── Skin card hover glow ─── */
+.skin-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 80%, rgba(255,255,255,0.06) 0%, transparent 70%);
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.skin-card:hover::after {
+  opacity: 1;
+}
+
+/* ─── Promise card hover ─── */
+.promise-card {
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.45s ease;
+}
+
+.promise-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.09);
+}
+
+/* ─── Closer card hover glow border ─── */
+.closer-card {
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.45s ease;
+}
+
+.closer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1),
+              0 0 0 1px rgba(176, 157, 134, 0.25);
+}
+
+/* ─── Footer link hover ─── */
+footer a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+footer a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+  opacity: 0.6;
+}
+
+footer a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ─── Global will-change optimizations ─── */
+.skin-card,
+.about-card,
+.promise-card,
+.closer-card,
+.btn {
+  will-change: transform;
+}
+
+.about-card-img,
+.skin-card-bg,
+.routine-img {
+  will-change: transform, filter;
+}
+
+/* ─── Ambient floating blobs animation (CSS fallback) ─── */
+@keyframes blobFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(20px, -15px) scale(1.03); }
+  66%       { transform: translate(-15px, 10px) scale(0.97); }
+}
+
+.about-blob--1 {
+  animation: blobFloat 14s ease-in-out infinite;
+}
+
+.about-blob--2 {
+  animation: blobFloat 18s ease-in-out infinite reverse;
+}
+
+/* ─── Reveal animation fallback (used if GSAP not loaded) ─── */
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.anim-fade-up.anim-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Scroll indicator bounce ─── */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+
+.home-scroll-indicator {
+  animation: scrollBounce 2.2s ease-in-out infinite;
+}
