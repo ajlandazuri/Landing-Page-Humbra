@@ -268,4 +268,59 @@ document.addEventListener('DOMContentLoaded', () => {
     window.open(whatsappUrl, '_blank');
   });
 
+  /* ==========================================================================
+     5. FAQ Premium Modal & Accordion Logic
+     ========================================================================== */
+  const faqModal = document.getElementById('faq-modal');
+  const faqCerrar = document.getElementById('faq-close');
+  const faqTrigger = document.getElementById('faq-trigger');
+  const faqOverlay = document.getElementById('faq-overlay');
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  const openFaq = (e) => {
+    if (e) e.preventDefault();
+    faqModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeFaq = () => {
+    faqModal.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  if (faqTrigger) {
+    faqTrigger.addEventListener('click', openFaq);
+  }
+  if (faqCerrar) {
+    faqCerrar.addEventListener('click', closeFaq);
+  }
+  if (faqOverlay) {
+    faqOverlay.addEventListener('click', closeFaq);
+  }
+  
+  // Accordion Logic
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const isExpanded = question.getAttribute('aria-expanded') === 'true';
+      const answer = question.nextElementSibling;
+      
+      // Close all other open items for exclusive accordion mode
+      faqQuestions.forEach(otherQuestion => {
+        if (otherQuestion !== question && otherQuestion.getAttribute('aria-expanded') === 'true') {
+          otherQuestion.setAttribute('aria-expanded', 'false');
+          const otherAnswer = otherQuestion.nextElementSibling;
+          otherAnswer.style.maxHeight = null;
+        }
+      });
+      
+      if (!isExpanded) {
+        question.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      } else {
+        question.setAttribute('aria-expanded', 'false');
+        answer.style.maxHeight = null;
+      }
+    });
+  });
+
 });
