@@ -2610,6 +2610,7 @@ ul {
   color: #FFFFFF;
   line-height: 1;
   margin-bottom: 1rem;
+  margin-right: -0.22em; /* Compensa el letter-spacing para centrado perfecto */
   text-shadow: 0 2px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -2622,14 +2623,17 @@ ul {
   color: rgba(255, 255, 255, 0.72);
   line-height: 1;
   margin: 0;
+  margin-right: -0.3em; /* Compensa el letter-spacing */
 }
 
 /* Animated scroll indicator */
 .home-scroll-indicator {
   position: absolute;
   bottom: 3rem;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
   z-index: 3;
   display: flex;
   flex-direction: column;
@@ -2666,6 +2670,7 @@ ul {
   font-weight: 400;
   letter-spacing: 0.25em;
   text-transform: uppercase;
+  margin-right: -0.25em; /* Compensa el letter-spacing para alinear con el logo */
 }
 
 /* Bottom fade transition */
@@ -2683,8 +2688,14 @@ ul {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .home-brand-name    { letter-spacing: 0.14em; }
-  .home-brand-tagline { letter-spacing: 0.2em; }
+  .home-brand-name { 
+    letter-spacing: 0.14em; 
+    margin-right: -0.14em; 
+  }
+  .home-brand-tagline { 
+    letter-spacing: 0.2em; 
+    margin-right: -0.2em; 
+  }
   .home-logo-glow     { width: 300px; height: 300px; }
   .home-scroll-indicator { bottom: 2rem; }
 }
